@@ -1,3 +1,7 @@
 name: odfvalidator
 description: Validate ODF files
 author: Florian Wilhelm
+
+runs:
+  using: docker
+  image: Dockerfile
