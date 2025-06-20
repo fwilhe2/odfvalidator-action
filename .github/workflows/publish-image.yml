@@ -34,7 +34,7 @@ jobs:
           tags: ${{ env.IMAGE_TAG }}
           platforms: linux/amd64, linux/arm64
           containerfiles: |
-            ./Containerfile
+            ./Dockerfile
 
       - name: Push To ghcr.io
         id: push-to-ghcr
