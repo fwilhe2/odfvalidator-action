@@ -1,5 +1,5 @@
 # Set the base image to use for subsequent instructions
-FROM eclipse-temurin:21
+FROM docker.io/library/eclipse-temurin:21
 
 # Set the working directory inside the container
 WORKDIR /usr/src
