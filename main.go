@@ -87,7 +87,7 @@ func main() {
 	}
 
 	for _, report := range reports {
-		fmt.Printf(">>> File %s has %d warnings", report.ODSPath, len(report.Entries))
+		fmt.Printf(">>> File %s has %d warnings\n", report.ODSPath, len(report.Entries))
 		for _, e := range report.Entries {
 			// GitHub expects repo-relative paths
 			repoPath := filepath.Join(report.ODSPath, e.SubFile)
