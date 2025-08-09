@@ -94,7 +94,7 @@ func main() {
 			repoPath = strings.Replace(repoPath, "/github/workspace/", "", 0)
 			// Use "warning" or "error" based on severity
 			fmt.Printf("::%s file=%s,line=%d,col=%d::%s\n",
-				strings.ToLower(e.Severity),
+				transformSeverity(e.Severity),
 				repoPath,
 				e.Line,
 				e.Column,
@@ -102,6 +102,14 @@ func main() {
 			)
 		}
 	}
+}
+
+func transformSeverity(input string) string {
+	s := strings.ToLower(input)
+	if s == "info" {
+		return "warning"
+	}
+	return s
 }
 
 // splitODSPath separates the ODS archive path from the internal file path
