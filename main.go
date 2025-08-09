@@ -90,6 +90,7 @@ func main() {
 		for _, e := range report.Entries {
 			// GitHub expects repo-relative paths
 			repoPath := filepath.Join(report.ODSPath, e.SubFile)
+			repoPath = strings.Replace(repoPath, "/github/workspace/", "", 0)
 			// Use "warning" or "error" based on severity
 			fmt.Printf("::%s file=%s,line=%d,col=%d::%s\n",
 				strings.ToLower(e.Severity),
