@@ -7,7 +7,7 @@ COPY main.go .
 RUN go build -v -o /usr/local/bin/odfvalidatorparser main.go
 
 # Set the base image to use for subsequent instructions
-FROM docker.io/library/eclipse-temurin:21
+FROM docker.io/library/eclipse-temurin:25
 
 # Set the working directory inside the container
 WORKDIR /usr/src
