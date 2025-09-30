@@ -1,4 +1,4 @@
-FROM docker.io/library/golang:1.25 AS BUILDER
+FROM docker.io/library/golang:1.25 AS builder
 
 WORKDIR /usr/src/app
 
@@ -14,7 +14,7 @@ WORKDIR /usr/src
 
 ADD https://repo1.maven.org/maven2/org/odftoolkit/odfvalidator/0.12.0/odfvalidator-0.12.0-jar-with-dependencies.jar ./odfvalidator.jar
 
-COPY --from=BUILDER /usr/local/bin/odfvalidatorparser /usr/local/bin/odfvalidatorparser
+COPY --from=builder /usr/local/bin/odfvalidatorparser /usr/local/bin/odfvalidatorparser
 
 # Copy any source file(s) required for the action
 COPY entrypoint.sh .
