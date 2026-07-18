@@ -12,7 +12,7 @@ FROM docker.io/library/eclipse-temurin:25
 # Set the working directory inside the container
 WORKDIR /usr/src
 
-ADD https://repo1.maven.org/maven2/org/odftoolkit/odfvalidator/0.12.0/odfvalidator-0.12.0-jar-with-dependencies.jar ./odfvalidator.jar
+ADD https://repo1.maven.org/maven2/org/odftoolkit/odfvalidator/0.13.0/odfvalidator-0.13.0-jar-with-dependencies.jar ./odfvalidator.jar
 
 COPY --from=builder /usr/local/bin/odfvalidatorparser /usr/local/bin/odfvalidatorparser
 
